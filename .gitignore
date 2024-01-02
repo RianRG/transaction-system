@@ -45,6 +45,7 @@ nest/yarn-debug.log*
 nest/yarn-error.log*
 nest/lerna-debug.log*
 nest/.DS_Store
+nest/.env
 
 # Pasta angular
 angular/dist

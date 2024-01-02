@@ -21,7 +21,14 @@ export class TransacService {
   }
 
   findAll() {
-    return this.transacRepository.find();
+    return this.transacRepository.find({ select: [
+      'id',
+      'transaction',
+      'email',
+      'type',
+      'amount',
+      'created_at',
+    ] });
   }
 
   async findOne(data: any): Promise<Transac> {

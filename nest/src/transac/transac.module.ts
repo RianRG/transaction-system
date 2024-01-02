@@ -10,5 +10,6 @@ import { Transac } from './entities/transac.entity';
   ],
   controllers: [TransacController],
   providers: [TransacService],
+  exports: [TransacService],
 })
 export class TransacModule {}
