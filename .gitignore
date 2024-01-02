@@ -1,0 +1,58 @@
+# Raiz do projeto
+/dist
+/node_modules
+/bazel-out
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Pasta nest
+nest/dist
+nest/node_modules
+nest/bazel-out
+nest/logs
+nest/*.log
+nest/npm-debug.log*
+nest/pnpm-debug.log*
+nest/yarn-debug.log*
+nest/yarn-error.log*
+nest/lerna-debug.log*
+nest/.DS_Store
+
+# Pasta angular
+angular/dist
+angular/tmp
+angular/out-tsc
+angular/node_modules
+angular/npm-debug.log
+angular/yarn-error.log
+angular/.history/*
+angular/.DS_Store
+angular/Thumbs.db
