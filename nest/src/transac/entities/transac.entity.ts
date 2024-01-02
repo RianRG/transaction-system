@@ -13,7 +13,7 @@ export class Transac {
   @Column({ name: 'transaction' })
   transaction: string;
 
-  @Column({ name: 'email' })
+  @Column({ name: 'email', unique: true })
   email: string;
   
   @Column({ name: 'password' })

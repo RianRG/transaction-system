@@ -1,10 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { CreateTransacDto } from './dto/create-transac.dto';
-import { UpdateTransacDto } from './dto/update-transac.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Transac } from './entities/transac.entity';
 import { Repository } from 'typeorm';
-
+import * as bcrypt from 'bcrypt';
 @Injectable()
 export class TransacService {
 
@@ -14,27 +13,22 @@ export class TransacService {
   ){}
 
   create(createTransacDto: CreateTransacDto) {
-
     if(createTransacDto.type==='debit') createTransacDto.amount *= -1;
 
-
+    createTransacDto.password = bcrypt.hashSync(createTransacDto.password, 10)
 
     return this.transacRepository.save(createTransacDto);
   }
 
   findAll() {
-    return `This action returns all transac`;
+    return this.transacRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} transac`;
+  async findOne(data: any): Promise<Transac> {
+    return await this.transacRepository.findOneByOrFail(data);
   }
 
-  update(id: number, updateTransacDto: UpdateTransacDto) {
-    return `This action updates a #${id} transac`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} transac`;
+  remove(id: string) {
+    return this.transacRepository.delete(id);
   }
 }

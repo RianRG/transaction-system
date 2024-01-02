@@ -1,9 +1,8 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { TransacService } from './transac.service';
 import { CreateTransacDto } from './dto/create-transac.dto';
-import { UpdateTransacDto } from './dto/update-transac.dto';
 
-@Controller('transac')
+@Controller('transaction')
 export class TransacController {
   constructor(private readonly transacService: TransacService) {}
 
@@ -18,17 +17,12 @@ export class TransacController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.transacService.findOne(+id);
-  }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateTransacDto: UpdateTransacDto) {
-    return this.transacService.update(+id, updateTransacDto);
+  async findOne(@Param('id') id: string) {
+    return await this.transacService.findOne({ id });
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.transacService.remove(+id);
+    return this.transacService.remove(id);
   }
 }
