@@ -10,9 +10,8 @@ import { Request, Response } from 'express';
 @Controller('transaction')
 export class AuthController {
   constructor(
-    private auth: AuthService,
     private transac: TransacService,
-    private jwt: JwtService
+    private jwtService: JwtService
     ) {}
 
   @Post('auth')
@@ -24,14 +23,14 @@ export class AuthController {
     const user = await this.transac.findOne({ email });
 
     if(!user){
-      throw new UnauthorizedException('Unauthorized!')
+      throw new BadRequestException('Unauthorized!')
     }
 
     if(!await bcrypt.compare(loginDTO.password, user.password)){
-      throw new UnauthorizedException('Unauthorized!')
+      throw new BadRequestException('Unauthorized!')
     }
 
-    const jwt = this.jwt.signAsync({ id: user.id });
+    const jwt = await this.jwtService.signAsync({ id: user.id });
     res.cookie('jwt', jwt, { httpOnly: true });
     return {
       message: 'logged with successfully!'
@@ -42,11 +41,26 @@ export class AuthController {
   async getLogin(@Req() req: Request){
     try{
       const cookie = req.cookies['jwt'];
+      const data = await this.jwtService.verifyAsync(cookie);
 
-      const data = await this.jwt.verifyAsync(cookie);
+      if(!data){
+        throw new UnauthorizedException();
+      }
 
+      const user = await this.transac.findOne({ id: data.id });
+      const { password, ...results } = user;
+      return results;
     } catch(e){
-      throw new BadRequestException()
+      throw new Error(e);
+    }
+  }
+
+  @Post('logout')
+  logout(@Res({ passthrough: true }) res: Response){
+    res.clearCookie('jwt');
+
+    return {
+      message: 'success!'
     }
   }
 }

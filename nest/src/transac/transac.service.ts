@@ -12,12 +12,15 @@ export class TransacService {
     private transacRepository: Repository<Transac>
   ){}
 
-  create(createTransacDto: CreateTransacDto) {
+  async create(createTransacDto: CreateTransacDto) {
     if(createTransacDto.type==='debit') createTransacDto.amount *= -1;
 
     createTransacDto.password = bcrypt.hashSync(createTransacDto.password, 10)
 
-    return this.transacRepository.save(createTransacDto);
+    const user = await this.transacRepository.save(createTransacDto);
+
+    delete user.password;
+    return user;
   }
 
   findAll() {
