@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Poppins, sans-serif;
 }
 
 main{
@@ -16,14 +18,23 @@ form{
   width: 500px;
   background-color: purple;
   padding: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 form label{
   position: absolute;
+  transform: translate(20%, 60%);
+  color: white;
+  pointer-events: none;
+}
+
+.transac{
+  width: 80%;
 }
 
 form input{
-  padding: 10px 20px;
+  padding: 10px 10px;
   background-color: transparent;
   outline: none;
   border-radius: 10px;
