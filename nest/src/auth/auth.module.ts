@@ -3,13 +3,14 @@ import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 import { TransacModule } from 'src/transac/transac.module';
 import { JwtModule } from '@nestjs/jwt';
+import { jwt } from './jwtConstants';
 
 @Module({
   imports: [
     TransacModule,
     JwtModule.register({
       global: true,
-      secret: process.env.SECRET,
+      secret: jwt.secret,
       signOptions: { expiresIn: '7d' }
     })
   ],

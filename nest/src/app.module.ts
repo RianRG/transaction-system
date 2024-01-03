@@ -10,11 +10,6 @@ import { ConfigModule } from '@nestjs/config';
 @Module({
   imports: [
     TransacModule,
-    ConfigModule.forRoot({
-      envFilePath: ['.env'],
-      isGlobal: true,
-      ignoreEnvFile: true,
-    }),
     TypeOrmModule.forRoot({
       type: 'sqlite',
       database: ':memory:',
