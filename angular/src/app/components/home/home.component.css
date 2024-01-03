@@ -1,0 +1,32 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form{
+  height: 400px;
+  width: 500px;
+  background-color: purple;
+  padding: 30px;
+}
+
+form label{
+  position: absolute;
+}
+
+form input{
+  padding: 10px 20px;
+  background-color: transparent;
+  outline: none;
+  border-radius: 10px;
+  border: 2px solid black;
+  color: white;
+}

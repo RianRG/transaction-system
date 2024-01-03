@@ -1,5 +1,4 @@
 import { BadRequestException, Body, Controller, Req, Res, UnauthorizedException } from '@nestjs/common';
-import { AuthService } from './auth.service';
 import { Post, Get } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt';
 import { TransacService } from 'src/transac/transac.service';
