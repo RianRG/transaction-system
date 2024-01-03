@@ -3,7 +3,7 @@ import { AuthController } from './auth.controller';
 import { TransacModule } from 'src/transac/transac.module';
 import { JwtModule } from '@nestjs/jwt';
 import { jwt } from './jwtConstants';
-import { AuthService } from './auth.service';
+import { TransacService } from 'src/transac/transac.service';
 
 @Module({
   imports: [
@@ -14,7 +14,7 @@ import { AuthService } from './auth.service';
       signOptions: { expiresIn: '7d' }
     })
   ],
+  providers: [TransacService],
   controllers: [AuthController],
-  providers: [AuthService],
 })
 export class AuthModule {}

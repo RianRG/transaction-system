@@ -1,7 +1,7 @@
 import { BadRequestException, Body, Controller, Req, Res, UnauthorizedException } from '@nestjs/common';
 import { Post, Get } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt';
-import { TransacService } from 'src/transac/transac.service';
+import { TransacService } from '../transac/transac.service';
 import * as bcrypt from 'bcrypt';
 import { CreateTransacDto } from 'src/transac/dto/create-transac.dto';
 import { Request, Response } from 'express';
