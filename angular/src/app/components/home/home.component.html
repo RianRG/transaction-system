@@ -1,12 +1,12 @@
 <main>
   <form (ngSubmit)="onSubmit()" [formGroup]="form">
-    <label for="transac">Transaction</label>
-    <input type="text" class="transac">
+    <label for="transaction">Transaction</label>
+    <input type="text" class="transac" placeholder="Transaction">
     <aside>
-      <label for="email">Email</label>
-      <input type="text" formControlName="email">
-      <label for="password">Password</label>
-      <input type="password">
+      <input type="text" formControlName="email" placeholder="Email">
+      <input type="password" placeholder="Password">
     </aside>
+    <label for="type">Credit | Debit</label>
+    <input type="text" placeholder="Credit | Debit" class="type">
   </form>
 </main>
