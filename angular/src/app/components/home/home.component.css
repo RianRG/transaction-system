@@ -6,8 +6,12 @@
 }
 
 *::selection{
-  background-color: orangered;
+  background-color: var(--accent);
   color: white;
+}
+
+body{
+  background-color: var(--bg-color);
 }
 
 main{
@@ -20,35 +24,103 @@ main{
 form{
   height: 400px;
   width: 500px;
-  background-color: purple;
+  background-color: var(--second);
   padding: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 20px;
+  color: var(--txt-color);
+  gap: 40px;
+  border-radius: 8px;
+  box-shadow: 1px 3px var(--accent);
 }
 
 ::placeholder{
-  color: white;
+  color: var(--txt-color);
+  position: relative;
 }
 
 .transac{
-  width: 200px;
+  width: 90%;
 }
 
 form input{
-  padding: 10px 10px;
+  padding: 6px 10px;
   background-color: transparent;
-  width: 80%;
   outline: none;
-  border-radius: 10px;
-  border: 2px solid white;
-  color: white;
-  font-weight: 600;
+  border-radius: 4px;
+  border: none;
+  border-bottom: 1px solid var(--txt-color);
+  font-weight: 400;
 }
+
 
 aside{
   display: flex;
   gap: 9px;
+}
+
+aside input{
+  width: 80%;
+}
+
+.type{
+  width: 150px;
+  text-align: center;
+}
+
+form button{
+  padding: 4px 40px;
+  outline: none;
+  border: 3px solid var(--accent);
+  background-color: transparent;
+  color: var(--txt-color);
+  font-weight: 600;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: .4s;
+  letter-spacing: 2px;
+}
+
+form button:hover{
+  letter-spacing: 4px;
+  box-shadow: 0 3px var(--accent);
+}
+
+input[type=number]{
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.second{
+  justify-content: space-between;
+  gap: 140px;
+}
+
+.error{
+  position: absolute;
+  background-color: var(--primary);
+  top: 80px;
+  padding: 4px 20px;
+  transition: .4s;
+}
+
+@media (max-width: 383px){
+  form{
+    width: 90%;
+  }
+
+  .second{
+    gap: 20px;
+  }
+
+  form{
+    padding: 10px;
+    text-align: center;
+  }
+
+  .error{
+    max-width: 95%;
+  }
 }

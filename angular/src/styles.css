@@ -2,3 +2,11 @@
 *{
   font-family: 'Poppins', sans-serif;
 }
+
+:root{
+  --txt-color: #080907;
+  --bg-color: #fafcfa;
+  --primary: #76a25d;
+  --second: #b8d5a8;
+  --accent: #91c772; 
+ }

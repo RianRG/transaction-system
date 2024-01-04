@@ -1,12 +1,21 @@
 <main>
   <form (ngSubmit)="onSubmit()" [formGroup]="form">
-    <label for="transaction">Transaction</label>
-    <input type="text" class="transac" placeholder="Transaction">
-    <aside>
-      <input type="text" formControlName="email" placeholder="Email">
-      <input type="password" placeholder="Password">
+    <div class="error" *ngIf="errorMsg">
+      <p>{{ errorMsg }}</p>
+    </div>
+    <h3>Post your transaction!</h3>
+    <input required type="text" class="transac" formControlName="transaction" 
+    placeholder="Transaction">
+      <aside>
+      <input required type="email" formControlName="email" placeholder="Email">
+      <input required type="password" formControlName="password" placeholder="Password">
     </aside>
-    <label for="type">Credit | Debit</label>
-    <input type="text" placeholder="Credit | Debit" class="type">
+    <aside class="second">
+      <input required type="text" formControlName="type" 
+      placeholder="Credit | Debit" class="type">
+      <input required type="number" formControlName="amount" min="0" step=".01"
+      placeholder="Amount">
+    </aside>
+    <button type="submit">Create</button>
   </form>
 </main>
