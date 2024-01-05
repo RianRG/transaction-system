@@ -41,6 +41,10 @@ form{
   position: relative;
 }
 
+form input:focus input::placeholder{
+  background-color: white;
+}
+
 .transac{
   width: 90%;
 }
