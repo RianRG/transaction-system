@@ -11,9 +11,9 @@ export class UserComponent {
   constructor(private loginService: LoginService){};
   ngOnInit(){
     this.loginService.getLogin().subscribe(data =>{
-      if(!data){
-        console.log('unauthorized!!!!!!!')
-      }
+      console.log('logged')
+    }, (error: Error) =>{
+      console.log('Unauthorized!!!!!')
     });
   }
 }
