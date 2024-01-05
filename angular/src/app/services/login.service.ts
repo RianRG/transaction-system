@@ -12,4 +12,9 @@ export class LoginService {
   postLogin(data: Pick<ITransac, 'email' | 'password'>){
     return this.http.post('http://localhost:3000/transaction/auth', data);
   }
+
+  getLogin(){
+    return this.http.get('http://localhost:3000/transaction/auth/login', 
+    { withCredentials: true });
+  }
 }
