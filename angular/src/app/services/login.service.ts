@@ -18,10 +18,5 @@ export class LoginService {
 
   getLogin(){
     return this.http.get('http://localhost:3000/transaction/auth/login', { withCredentials: true })
-    .pipe(
-      catchError((error: HttpErrorResponse) => {
-        throw new Error(error.message)
-      })
-    );
   }
 }
