@@ -11,6 +11,7 @@ export class HomeComponent {
 
   form!: FormGroup;
   errorMsg!: string;
+  typePassword: string="password"
   constructor(
     private homeService: HomeService,
     private fb: FormBuilder
@@ -25,7 +26,6 @@ export class HomeComponent {
   }
 
   onSubmit(){
-
     if(this.form.value.type.toLowerCase() !=='debit' && 
     this.form.value.type.toLowerCase() !=='credit'){
 
@@ -37,11 +37,18 @@ export class HomeComponent {
     if(this.form.value.password.length<7) this.errorMsg='Min length password is 7'
 
     if(this.form.valid){
+      this.form.value.type=this.form.value.type.toLowerCase();
       this.homeService.post(this.form.value).subscribe(data =>{
         console.log(data);
       });
+
     } else{
       this.errorMsg='Empty fields are not accepted!'
     }
+  }
+
+  revealPass(){
+    this.typePassword=='password' ? this.typePassword='text'
+    : this.typePassword='password';
   }
 }
