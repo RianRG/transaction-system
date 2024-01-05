@@ -1,0 +1,17 @@
+.errorC{
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  display: flex ;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+.error{
+  height: 400px;
+  width: 500px;
+  padding: 14px;
+  background-color: var(--accent);
+}

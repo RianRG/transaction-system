@@ -1,5 +1,5 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -8,12 +8,17 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent {
-  constructor(private loginService: LoginService){};
+  errorMsg!:boolean;
+  constructor(
+    private loginService: LoginService,
+    private router: Router
+    ){};
   ngOnInit(){
     this.loginService.getLogin().subscribe(data =>{
-      console.log('logged')
+      this.errorMsg=true;
     }, (error: Error) =>{
-      console.log('Unauthorized!!!!!')
+      this.errorMsg=false;
+      this.router.navigateByUrl('/login')
     });
   }
 }
