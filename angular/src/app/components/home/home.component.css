@@ -101,6 +101,12 @@ form i{
   right: 30px;
   cursor: pointer;
   font-size: 20px;
+  transition: .3s;
+}
+
+form i.white{
+  color: white;
+  rotate: 180deg;
 }
 
 .error{

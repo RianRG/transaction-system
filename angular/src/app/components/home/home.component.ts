@@ -12,6 +12,7 @@ export class HomeComponent {
   form!: FormGroup;
   errorMsg!: string;
   typePassword: string="password"
+  iClass: string="bx bxs-low-vision";
   constructor(
     private homeService: HomeService,
     private fb: FormBuilder
@@ -47,7 +48,12 @@ export class HomeComponent {
     }
   }
   revealPass(){
-    this.typePassword=='password' ? this.typePassword='text'
-    : this.typePassword='password';
+    if(this.typePassword=='password'){
+      this.typePassword='text' ;
+      this.iClass="bx bxs-low-vision white"
+    } else{
+      this.typePassword='password';
+      this.iClass="bx bxs-low-vision"; 
+    }
   }
 }
