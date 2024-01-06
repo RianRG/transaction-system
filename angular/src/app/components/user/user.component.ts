@@ -18,7 +18,9 @@ export class UserComponent {
       this.errorMsg=true;
     }, (error: Error) =>{
       this.errorMsg=false;
-      this.router.navigateByUrl('/login')
+      setTimeout(() =>{
+        this.router.navigateByUrl('/login');
+      }, 1000)
     });
   }
 }

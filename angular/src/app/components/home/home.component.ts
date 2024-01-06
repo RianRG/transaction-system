@@ -46,7 +46,6 @@ export class HomeComponent {
       this.errorMsg='Empty fields are not accepted!'
     }
   }
-
   revealPass(){
     this.typePassword=='password' ? this.typePassword='text'
     : this.typePassword='password';

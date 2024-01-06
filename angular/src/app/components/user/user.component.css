@@ -1,3 +1,8 @@
+*::selection{
+  background-color: var(--primary);
+  color: white;
+}
+
 .errorC{
   position: fixed;
   height: 100vh;
@@ -6,12 +11,45 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px) brightness(60%);
 }
 
 .error{
+  position: relative;
   height: 400px;
   width: 500px;
   padding: 14px;
+  color: var(--txt-color);
   background-color: var(--accent);
+}
+
+.error h1{
+  margin-bottom: 20px;
+}
+
+.error .first:after{
+  content: '';
+  display: block;
+  background-color: var(--primary);
+  height: 5px;
+  width: 40%;
+  margin-bottom: 25px;
+}
+
+.error p:last-child::after{
+  position: absolute;
+  content: '';
+  display: block;
+  height: 4px;
+  width: 40%;
+  background-color: var(--second);
+  margin-top: 30px;
+  right: 40px;
+}
+
+.error h5{
+  height: 4px;
+  width: 40%;
+  background-color: transparent;
+  margin-top: 90px;
 }
