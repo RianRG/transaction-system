@@ -134,4 +134,10 @@ form i.white{
   .error{
     max-width: 95%;
   }
+
+  form i{
+    font-size: .94rem;
+    margin-top: 5px;
+    right: 10px;
+  }
 }

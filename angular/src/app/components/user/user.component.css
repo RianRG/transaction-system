@@ -53,3 +53,10 @@
   background-color: transparent;
   margin-top: 90px;
 }
+
+@media(max-width: 543px){
+  .error{
+    width: 95%;
+    height: 500px;
+  }
+}
