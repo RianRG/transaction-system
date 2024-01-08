@@ -1,8 +1,8 @@
 <main>
+  <div class="error" *ngIf="errorMsg">
+    <p>{{ errorMsg }}</p>
+  </div>
   <form (ngSubmit)="onSubmit()" [formGroup]="form">
-    <div class="error" *ngIf="errorMsg">
-      <p>{{ errorMsg }}</p>
-    </div>
     <h3>Post your transaction!</h3>
     <input required type="text" class="transac" formControlName="transaction" 
     placeholder="Transaction">
@@ -17,6 +17,7 @@
       <input required type="number" formControlName="amount" min="0" step=".01"
       placeholder="Amount">
     </aside>
+    <p>Already have an account? <a href="/login">Login</a> </p>
     <button type="submit">Create</button>
   </form>
 </main>
