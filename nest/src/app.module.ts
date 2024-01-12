@@ -12,7 +12,7 @@ import { ConfigModule } from '@nestjs/config';
     TransacModule,
     TypeOrmModule.forRoot({
       type: 'sqlite',
-      database: ':memory:',
+      database: 'database.sqlite',
       entities: [Transac],
       synchronize: true
     }),
