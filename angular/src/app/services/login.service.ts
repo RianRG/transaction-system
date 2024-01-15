@@ -1,8 +1,6 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ITransac } from '../interfaces/ITransac';
-import { catchError } from 'rxjs/operators';
-import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +8,11 @@ import { throwError } from 'rxjs';
 export class LoginService {
 
   constructor(private http: HttpClient) { }
-
-
   postLogin(data: Pick<ITransac, 'email' | 'password'>){
-    return this.http.post('https://fullstack-production-924a.up.railway.app/transaction/auth', data);
+    return this.http.post('https://fullstack-production-924a.up.railway.app/transaction/auth', data, 
+    {
+      withCredentials: true 
+    });
   }
 
   getLogin(){

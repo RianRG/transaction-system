@@ -27,6 +27,7 @@ export class LoginComponent {
   onSubmit(){
     this.loginService.postLogin(this.form.value).subscribe(data =>{
       if(data) this.router.navigateByUrl('/user')
+      console.log(data);
     })
   }
 

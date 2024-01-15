@@ -15,9 +15,12 @@ export class UserComponent {
     ){};
   ngOnInit(){
     this.loginService.getLogin().subscribe(data =>{
+      console.log(`data::::: ${data}`);
       this.errorMsg=true;
     }, (error: Error) =>{
+      console.log('erorrrororroo')
       this.errorMsg=false;
+      console.log(error);
       setTimeout(() =>{
         this.router.navigateByUrl('/login');
       }, 1000)
