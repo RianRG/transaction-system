@@ -32,7 +32,8 @@ export class AuthController {
     const jwt = await this.jwtService.signAsync({ id: user.id });
     res.cookie('jwt', jwt, { 
       httpOnly: true,
-      sameSite: 'none'
+      sameSite: 'none',
+      secure: true
     });
     return {
       message: 'logged with successfully!'
