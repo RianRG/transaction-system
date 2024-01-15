@@ -11,6 +11,6 @@ export class HomeService {
   constructor(private http: HttpClient) { }
 
   post(data: ITransac): Observable<ITransac>{
-    return this.http.post<ITransac>('http://localhost:3000/transaction', data);
+    return this.http.post<ITransac>('https://fullstack-production-924a.up.railway.app/transaction', data);
   }
 }

@@ -13,10 +13,10 @@ export class LoginService {
 
 
   postLogin(data: Pick<ITransac, 'email' | 'password'>){
-    return this.http.post('http://localhost:3000/transaction/auth', data);
+    return this.http.post('https://fullstack-production-924a.up.railway.app/transaction/auth', data);
   }
 
   getLogin(){
-    return this.http.get('http://localhost:3000/transaction/auth/login', { withCredentials: true })
+    return this.http.get('https://fullstack-production-924a.up.railway.app/transaction/auth/login', { withCredentials: true })
   }
 }
