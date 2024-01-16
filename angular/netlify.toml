@@ -1,0 +1,7 @@
+[[redirects]]
+  from = "/login"
+  to = "/login"
+
+[[redirects]]
+  from = "/user"
+  to = "/user"
