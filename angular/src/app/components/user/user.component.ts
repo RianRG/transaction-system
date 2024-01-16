@@ -18,7 +18,6 @@ export class UserComponent {
       console.log(`data::::: ${data}`);
       this.errorMsg=true;
     }, (error: Error) =>{
-      console.log('erorrrororroo')
       this.errorMsg=false;
       console.log(error);
       setTimeout(() =>{
