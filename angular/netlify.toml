@@ -1,7 +1,7 @@
 [[redirects]]
   from = "/login"
-  to = "https://main--velvety-snickerdoodle-4357ab.netlify.app/login"
+  to = "/login"
 
 [[redirects]]
   from = "/user"
-  to = "https://main--velvety-snickerdoodle-4357ab.netlify.app/user"
+  to = "/user"
