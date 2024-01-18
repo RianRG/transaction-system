@@ -8,7 +8,7 @@ async function bootstrap() {
 
   app.use(cookieParser());
   app.enableCors({
-    origin: 'https://velvety-snickerdoodle-4357ab.netlify.app',
+    origin: 'https://main--velvety-snickerdoodle-4357ab.netlify.app',
     credentials: true,
   })
 
