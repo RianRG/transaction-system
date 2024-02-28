@@ -43,7 +43,6 @@ The system is scalable, and it can be easily expanded to support more users and 
 
 Deploy:
 
-Backend: 'https://fullstack-production-924a.up.railway.app/transaction' (there's some suffixes in URL)
-Frontend: 'https://main--velvety-snickerdoodle-4357ab.netlify.app/'
+(Not on deploy anymore)
 
 Thank you!
