@@ -13,7 +13,13 @@ The purpose of this project is to provide a simple and secure way to manage tran
 ## Features
 
 Account creation: Users can create accounts with a username, password, and email address.
+
+---
+
 Login: Users can login with their username and password.
+
+---
+
 Transaction creation: Users can create new transactions (only one transaction per email).
 
 ## Technical details
