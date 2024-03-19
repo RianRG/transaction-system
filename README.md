@@ -19,12 +19,17 @@ Transaction creation: Users can create new transactions (only one transaction pe
 ## Technical details
 
 Backend: The backend is implemented using NestJS, a framework for building scalable and efficient Node.js applications.
+
 ---
 Frontend: The frontend is implemented using Angular, a framework for building web applications.
+
 ---
+
 Database: The system uses a SQLite database to store data. 
 SQLite is a lightweight, serverless, and self-contained SQL database engine. It is commonly used in mobile and desktop applications to store and manage data locally. SQLite is known for its small size, ease of integration, and high performance. It supports standard SQL queries and transactions, making it a versatile choice for developers.
+
 ---
+
 Authentication: The system uses JWT cookies for authentication.
 
 ## How to use:
