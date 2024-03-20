@@ -32,7 +32,7 @@ Frontend: The frontend is implemented using Angular, a framework for building we
 ---
 
 Database: The system uses a SQLite database to store data. 
-SQLite is a lightweight, serverless, and self-contained SQL database engine. It is commonly used in mobile and desktop applications to store and manage data locally. SQLite is known for its small size, ease of integration, and high performance. It supports standard SQL queries and transactions, making it a versatile choice for developers.
+SQLite is a lightweight, serverless, and self-contained SQL database engine. It is commonly used in mobile and desktop applications to store and manage data locally. SQLite is known for its small size, ease of integration, and high performance. It supports standard SQL queries and transactions, making it a versatile choice for developers. (Using TYPEORM)
 
 ---
 
