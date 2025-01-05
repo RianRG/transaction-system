@@ -45,6 +45,8 @@ Run the command pnpm install
 Run the command pnpm run start:dev
 Access the system in the browser at http://localhost:3000
 
+Or you can build an executable with "pnpm run build" and execute.
+
 ## Contributions:
 
 Authors:
