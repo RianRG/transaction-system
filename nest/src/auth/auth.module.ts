@@ -11,7 +11,7 @@ import 'dotenv/config';
     TransacModule,
     JwtModule.register({
       global: true,
-      secret: process.env.SECRET,
+      secret: 'AKDJAKJDKJAKJDKJADD',
       signOptions: { expiresIn: '7d' }
     }),
     TypeOrmModule.forFeature([Transac])
